@@ -1,177 +1,180 @@
-// Assignment-1
+'use strict';
 
-let country="india";
-let continent="asia";
-let population="1.4b";
-console.log("country:", country);
-console.log("continent:", continent);
+let hasDriverLicense= false;
+const passTest=true;
 
-console.log("population:", population);
+if(passTest){
+hasDriverLicense=true
 
-
-
-// let,var and const
-
-
-// the value of let variable should be change
-
-let firstName="ram";
-console.log("firstname: ",firstName);
-
-firstName="Shyam"
-console.log("firstname: ",firstName);
-
-// the value of const variable should never be change at any point
-
-const lastName="sharma";
-console.log("lastname: ",lastName);
-
-// lastName="panday";
-// console.log("lastname: ",lastName); 
-
-// error message -Uncaught TypeError: Assignment to constant variable.
-//    at script.js:29:9
-
-
-// var is similar to let like both value should change at any point but they both having small diffrennce that we doing earlier lesson right now we only use let or const
-
-
-//basic operator
-
-// 1.Assignment operator
-
-let x=10+5;
-console.log(x); //x=15
-
-x+=10; //x=x+10
-console.log(x);//x=25
-
-x*=4;//x=x*4
-console.log(x);//x=100
-
-x/=4;//x=x/4;
-console.log(x);//x=25
-
-
-x++; //x=x+1
-console.log(x);//x=26
-
-x--;//x=x-1
-console.log(x);//x=25
-
-
-// 2.comparison operator
-
-// the comparison ooperator should give boolean value to compare two value
-
-
-// operotor precedence
-
-
-const currentYear=2024;
-const ageRam=currentYear-1999;
-const ageShyam=currentYear-1996;
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
-
-
-// codingChallenge-1
-
-
-const markMass=78;
-const markHeight=1.69;
-
-const johnMass=95;
-const johnHeight=1.88;
-
-const markBMI=markMass/markHeight**2;
-const johnBMI=johnMass/johnHeight**2;
-
-const markHigherBMI=markBMI>johnBMI;
-console.log("Mark has a higher BMI than John: ",markHigherBMI);
-
-
-// codingChallenge-2
-
-if(markBMI>johnBMI){
-
-console.log("Mark's BMI is higher than John's!");
 }
-
-else{
-    console.log("John's BMI is higher than Mark's!");
-
+if(hasDriverLicense){
+    console.log(
+        "enjoy your driving and be safe"
+    );
 }
 
 
-if(markBMI>johnBMI){
-
-    console.log(`Mark's BMI (${markBMI})  is higher than John's (${johnBMI})`);
-    }
-    
-    else{
-        console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI}) !`);
-    
-    }
+// Function
 
 
-// type conversion
+// define a fuction
+// function car(){
 
-const year='2024';
+// console.log("this is my car");
 
-console.log(year+18);
-console.log(Number(year)+18); //here i can change string into number
+// }
 
-// 5 falsy value: 0, "", NaN, undefined, null
+// // calling a function
+// car();
+// car();
+// car();
 
-console.log(Boolean(0)); //false
-console.log(Boolean(""));//false
-console.log(Boolean(NaN));//false
-console.log(Boolean(undefined));//false
-console.log(Boolean(null));//false
+// function declearation
+function addition(firstNumber,secondNumber){
 
-console.log(Boolean("john"));//true
-console.log(Boolean({}));//true
+const sum=firstNumber+secondNumber;
+return sum;
+
+}
+const total=addition('10',20)
+console.log(total);
+
+// function expression
+
+const ageCal=function (birthyear){
+
+    return(2024-birthyear);
+}
+const age1=ageCal(1999);
+console.log(age1);
+
+// arrow function
+
+const age2=birthyear=>2024-birthyear; //this is only one parameter
+
+const age=age2(1998);
+console.log(age);
 
 
-const money=0;
-if(money){
-    console.log("don't spend it all!");
+
+const yearUntilRetirementAge=birthyear=>{
+
+const currentAge= 2024-birthyear;
+const retirement=65-currentAge;
+return retirement;
+
 }
 
-else{
+const retirementAge=yearUntilRetirementAge(1991);
+console.log(retirementAge);
 
-    console.log("do job!");
+// Array
+
+const friend1='Ram';
+const friend2='shyam';
+const friend3='krishna';
+const friend4='john';
+const friend5='joseph';
+
+const friends=['Ram','shyam','krishna','john','joseph'];
+console.log(friends);
+
+const years=[20,21,22,23,25];
+console.log(years);
+
+const day= new Array('monday','tuesday','wednesday','thursday','friday','saturday','sunday');
+console.log(day);
+
+//extract data from array
+
+console.log(friends[0]);
+console.log(friends[1]);
+console.log(friends[2]);
+console.log(friends[3]);
+console.log(friends[4]);
+
+// To find the length of array
+
+console.log(friends.length);
+console.log(friends[friends.length-1]);
+
+// array method
+
+friends.push('peter'); //added new element in the last (friend.length -1) index
+console.log(friends); 
+
+friends.unshift('shahbaz'); //added new element in the start (0 index)
+console.log(friends); 
+
+
+friends.pop(); //remove element  from the last (friend.length -1) index
+console.log(friends);
+
+
+friends.shift(); //remove first element in the array
+console.log(friends);
+
+// To find the index of the element
+
+console.log(friends.indexOf('krishna'));
+
+
+// To check the element is in the array or not
+
+console.log(friends.includes('krishna')); //true - its means krishna is in the array
+console.log(friends.includes('bob')); //false - its means bob is not in the array
+
+
+
+
+// object
+
+
+// this is how creatred a object
+
+const car= {
+    carName: 'Tata punch',
+    carOwnerName: 'Shyam lal',
+    company: 'Tata',
+    modal:'2024',
+    color:'white',
+    companyOwnerName:'Ratan Tata',
+    yearsOfServicing: ['2020','2021','2022','2023','2024']
+
+};
+
+
+console.log(car);
+
+// how to extract a data
+
+console.log(car.carOwnerName);
+console.log(Number(car.modal));
+console.log(car.yearsOfServicing[1]);
+
+car.type='compact';
+console.log(car);
+
+
+
+// object method
+
+const shahbaz={
+
+firstName: 'shahbaz',
+lastName: 'shamshi',
+birthyear: 2001,
+job:'software engineer',
+friend: ['abc','xyz','txy'],
+hasDriverLicense: false,
+calAge: function(birthyear){
+
+    return 2024-birthyear
 }
 
-// equality operator == or ===
 
-const age=18;
-if(age ===18){
+};
 
-    console.log("true");
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
+console.log(shahbaz.calAge(2001)); 
 
 
